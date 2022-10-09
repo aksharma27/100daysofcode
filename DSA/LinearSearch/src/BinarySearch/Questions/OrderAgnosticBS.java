@@ -9,34 +9,39 @@ public class OrderAgnosticBS {
         int ans = orderAgnosticBS(arr, 5);
         System.out.println(ans);
     }
-    static int orderAgnosticBS(int[] arr, int target){
-        int start =  0;
+    static int orderAgnosticBS(int[] arr, int target) {
+        int start = 0;
         int end = arr.length - 1;
-        int mid = start + (start + end) / 2;
+       // /find whether the array is in ascending or descending order
+        boolean isAsc;
+        isAsc = arr[start] < arr[end];
 
-        if (arr[start] > arr[end]){       //descending order
-            if (target > arr[mid]){
-                end = mid - 1;
-            }
-            else if (target < arr[mid]){
-                start = mid + 1;
-            }
-            else {
+        while (start <= end){
+            int mid = start + (end - start) / 2;
+            if (arr[mid] == target)
+            {
                 return mid;
             }
-        }
 
-        else{
-            if (target > arr[mid]){
-                start = mid + 1;
+            if (isAsc){
+                if (target < arr[mid])
+                    end = mid - 1;
+
+                else if(target > arr[mid])
+                    start = mid + 1;
             }
-            else if (target < arr[mid]){
-                end = mid - 1;
-            }
+
+
             else
-                return -1;
+            {
+                if (target > arr[mid]){
+                    end = mid - 1;
+                }
+                else if (target < arr[mid]){
+                    start = mid + 1;
+                }
+            }
         }
-
         return -1;
     }
 }
