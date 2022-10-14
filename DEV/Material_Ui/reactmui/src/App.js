@@ -1,7 +1,10 @@
 import './App.css';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 import SettingsIcon from '@mui/icons-material/Settings';
+// import { Typography } from '@mui/material';
+
 
 
 function App() {
@@ -19,14 +22,25 @@ function App() {
     <div className="App">
       <h1>React MUI</h1>
       <Button
-        startIcon={<SettingsIcon />}
+        endIcon={<DeleteIcon />}
         variant="contained"
         color={"success"}
         onClick={() => { CustomMe() }}
-        disabled={disableBtn}
-        size="small" >
+        size="small"
+        sx={{
+          backgroundColor: "dodgerblue",
+          color: "#fff",
+          margin: "25px",
+          "&:hover": {
+            backgroundColor: "red"
+          }
+        }} >
         Click Me
       </Button >
+
+      {/* <Typography varient="h1" component="h2">
+        Hello there!
+      </Typography> */}
     </div >
   );
 }

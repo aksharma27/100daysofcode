@@ -1,3 +1,5 @@
+package BinarySearch.Questions;
+
 public class FindFirstLast{
 	static int[] searchRange(int[] nums, int target){
 	int[] ans = {-1, -1};	//in case answer is not found
