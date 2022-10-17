@@ -32,7 +32,7 @@ public class StrictlySortedMatrix {
             while (rStart < (rEnd - 1)) {        //while this is true, we'll have more than 2 rows
                 int mid = rStart + (rEnd - rStart) / 2;
                 if (matrix[mid][cMid] == target){
-                    return new int[](mid, cMid);
+//                    return new int[](mid, cMid);
                 }
                 if (matrix[mid][cMid] > target){
                     //row end will be miiddle in this case
@@ -55,8 +55,21 @@ public class StrictlySortedMatrix {
             }
 
 //            search in 1st half
+            if (target <= matrix[rStart][cMid - 1]){
+                return BS(matrix, target, 0,  cMid-1, rStart);
+            }
 //            search in 2nd half
+            if (target >= matrix[rStart][cMid + 1]){
+
+            }
 //            search in 3rd half
+            if (target <= matrix[rStart + 1][cMid - 1]){
+
+            }
 //            search in 4th half
+          else{
+
+            }
+          return null;
         }
 }
