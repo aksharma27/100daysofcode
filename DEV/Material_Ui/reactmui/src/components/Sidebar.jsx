@@ -1,10 +1,11 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Sidebar = () => {
     return (
-        <div>
+        <Box bgcolor="pink" flex={1} p={2}>
             Sidebar
-        </div>
+        </Box>
     )
 }
 
