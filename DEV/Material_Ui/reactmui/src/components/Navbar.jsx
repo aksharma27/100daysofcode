@@ -1,8 +1,11 @@
 import { AppBar, Toolbar, styled, Typography, Box, InputBase, Badge, Avatar } from '@mui/material'
-import React from 'react'
-import CodeIcon from '@mui/icons-material/Code';
+import React, { useState } from 'react'
+// import CodeIcon from '@mui/icons-material/Code';
 import MailIcon from '@mui/icons-material/Drafts';
 import NotificationIcon from '@mui/icons-material/Notifications';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
@@ -37,13 +40,14 @@ const MobileView = styled(Box)(({ theme }) => ({
 
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
     return (
         <AppBar position="sticky">
             <StyledToolbar>
                 <Typography varient="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-                    SARA
+                    ABHI
                 </Typography>
-                <CodeIcon sx={{
+                <DeviceHubIcon sx={{
                     display: { xs: "block", sm: "none" }, pl: 2
                 }} />
 
@@ -55,13 +59,33 @@ const Navbar = () => {
                     <Badge badgeContent={2} color="error">
                         <NotificationIcon color="#fff" />
                     </Badge>
-                    <Avatar sx={{ width: 30, height: 30 }} src="https://avatars.githubusercontent.com/u/83135634?v=4" />
+                    <Avatar sx={{ width: 30, height: 30 }} src="https://avatars.githubusercontent.com/u/83135634?v=4"
+                        onClick={e => setOpen(true)}
+                    />
                 </Icons>
-                <MobileView>
+                <MobileView onClick={e => setOpen(true)}>        {/*for movile view*/}
                     <Avatar sx={{ width: 30, height: 30 }} src="https://avatars.githubusercontent.com/u/83135634?v=4" />
-                    <Typography varient="span">Abhishek</Typography>
+                    <Typography varient="span"></Typography>
                 </MobileView>
             </StyledToolbar>
+
+            <Menu
+                id="basic-menu"
+
+                open={open}
+                onClose={(e) => setOpen(false)}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                }}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                <MenuItem >Profile</MenuItem>
+                <MenuItem >My account</MenuItem>
+                <MenuItem >Logout</MenuItem>
+            </Menu>
         </AppBar >
     )
 }
