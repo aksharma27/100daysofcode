@@ -1,0 +1,28 @@
+package SORTING.CyclicSort;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class CyclicSort {
+    static void sort(int [] arr){
+        for (int i = 0; i < arr.length; i++){
+            int corret = arr[i] - 1;
+            if (arr[i] != arr[corret]){
+                swap(arr, i, corret);
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void swap(int[] arr, int first, int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {3,2,5,4,1};
+        sort(arr);
+    }
+}
