@@ -11,92 +11,95 @@ import { ModeNight, People } from '@mui/icons-material';
 const Sidebar = () => {
     return (
         <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <HomeIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Homepage" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+            <Box position="fixed">
+                <List>
 
-            <List> {/*pages*/}
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <DescriptionIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Pages" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <HomeIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Homepage" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
 
-            <List>      {/*Groups*/}
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <GroupsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Groups" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+                <List> {/*pages*/}
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <DescriptionIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Pages" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
 
-            <List>      {/*marktet icon */}
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <StorefrontIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="MarketPlace" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+                <List>      {/*Groups*/}
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <GroupsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Groups" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+
+                <List>      {/*marktet icon */}
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <StorefrontIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="MarketPlace" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
 
 
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <People />
-                        </ListItemIcon>
-                        <ListItemText primary="Friends" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <SettingsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Settings" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <AccountBoxIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Account" />
-                    </ListItemButton>
-                </ListItem>
-            </List>
-            {/*switch to dark mode */}
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="#home">
-                        <ListItemIcon>
-                            <ModeNight />
-                        </ListItemIcon>
-                        <Switch />
-                    </ListItemButton>
-                </ListItem>
-            </List>
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <People />
+                            </ListItemIcon>
+                            <ListItemText primary="Friends" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <SettingsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Settings" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <AccountBoxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Account" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+                {/*switch to dark mode */}
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#home">
+                            <ListItemIcon>
+                                <ModeNight />
+                            </ListItemIcon>
+                            <Switch />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
+            </Box>
         </Box >
     )
 }
