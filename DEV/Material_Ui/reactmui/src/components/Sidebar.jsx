@@ -11,7 +11,10 @@ import { ModeNight, People } from '@mui/icons-material';
 const Sidebar = () => {
     return (
         <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-            <Box position="fixed">
+            <Box sx={{ position: "fixed" }}>
+
+                {/* OR  <Box position:fixed>  will also do */}
+
                 <List>
 
                     <ListItem disablePadding>
