@@ -8,7 +8,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 
 const Rightbar = () => {
     return (
-        <Box bgcolor="#edd3146b" flex={1} p={1} sx={{
+        <Box flex={1} p={1} sx={{
             display:
             {
                 xs: "none", sm: "block"
@@ -17,7 +17,7 @@ const Rightbar = () => {
         }}>
             <Box position="fixed">
                 <Typography varient="h6" fontWeight={300} mt={1}>Online Friends</Typography>
-                <AvatarGroup max={7} total={24}>
+                <AvatarGroup max={7} total={24} ml={-10} mr={5} pr={3}>
                     <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
                     <Avatar alt="Travis Howard" src="https://material-ui.com/static/images/avatar/2.jpg" />
                     <Avatar alt="Cindy Baker" src="https://material-ui.com/static/images/avatar/3.jpg" />
@@ -140,7 +140,7 @@ const Rightbar = () => {
                     </ListItem>
                 </List>
             </Box>
-        </Box>
+        </Box >
     )
 }
 

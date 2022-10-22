@@ -8,7 +8,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import React from 'react'
 import { ModeNight, People } from '@mui/icons-material';
 
-const Sidebar = () => {
+const Sidebar = ({ mode, setMode }) => {
     return (
         <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
             <Box sx={{ position: "fixed" }}>
@@ -98,7 +98,7 @@ const Sidebar = () => {
                             <ListItemIcon>
                                 <ModeNight />
                             </ListItemIcon>
-                            <Switch />
+                            <Switch onChange={e => setMode(mode === "light" ? "dark" : "light")} />
                         </ListItemButton>
                     </ListItem>
                 </List>

@@ -6,7 +6,7 @@ import Post from './post';
 function Feed() {
 
     return (
-        <Box bgcolor="lightcoral" flex={3} p={3}>
+        <Box flex={3} p={3}>
             <Post />
             <Post />
             <Post />

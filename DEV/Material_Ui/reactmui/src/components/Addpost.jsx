@@ -1,14 +1,19 @@
-import { Avatar, Fab, styled, TextField, Tooltip } from '@mui/material'
+import { Avatar, Button, ButtonGroup, Fab, Stack, styled, TextField, Tooltip } from '@mui/material'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import AddIcon from '@mui/icons-material/Add';
 import React from 'react'
 import { useState } from 'react';
-import { padding } from '@mui/system';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import ImageIcon from '@mui/icons-material/Image';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+
 
 const StyledModal = styled(Modal)({
-    opacity: ".84",
+    opacity: "0.87",
     display: 'flex',
     alignItems: "center",
     justifyContent: "center",
@@ -47,7 +52,7 @@ const Addpost = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box width={400} height={300} fontWeight="800" bgcolor="white" color="black" fontSize="x-large" textAlign="center" lineHeight="3" p={3} borderRadius={5}>
+                <Box width={400} height={300} fontWeight="800" bgcolor={"background.default"} color={"text.primary"} fontSize="x-large" textAlign="center" lineHeight="3" p={3} borderRadius={5}>
                     <Typography varient="h1">Create a Post</Typography>
 
                     {/* Create avatar for adding post */}
@@ -73,6 +78,17 @@ const Addpost = () => {
                         placeholder="What's on your mind?"
                         multiline
                     />
+
+                    <Box direction="row" gap={1} mt={2}>
+                        <EmojiEmotionsIcon color='secondary' />
+                        <ImageIcon color="primary" />
+                        <VideoLibraryIcon />
+                        <PersonAddIcon />
+                    </Box>
+                    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                        <Button>Post</Button>
+                        <Button><DateRangeIcon /></Button>
+                    </ButtonGroup>
                 </Box>
             </StyledModal>
         </>
