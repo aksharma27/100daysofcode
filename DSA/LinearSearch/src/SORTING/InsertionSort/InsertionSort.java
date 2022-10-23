@@ -24,7 +24,7 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {5,3,4,1,2};
+        int[] arr = {31,41,59,26,41,58};
         insertionSort(arr);
     }
 }
