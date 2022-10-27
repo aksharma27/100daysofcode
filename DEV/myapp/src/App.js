@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';  
+import Counter from './Counter';
 
 const Person = (props) =>{
   return(
@@ -8,6 +9,7 @@ const Person = (props) =>{
     <h1>Name : {props.name}</h1>
     <h2>Last Name : {props.lastname}</h2>
     <h2>Age : {props.age}</h2>
+    <Counter/>
     </>
   )
 }
