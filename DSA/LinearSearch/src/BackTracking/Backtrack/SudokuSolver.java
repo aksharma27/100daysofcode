@@ -47,12 +47,12 @@ public class SudokuSolver {
             }
 
             //if found some element in row, break:
-            if (emptyLeft == false){
+            if (!emptyLeft){
                 break;
             }
         }
 
-        if (emptyLeft == true){
+        if (emptyLeft){
             return true;
             //suduko is solved
         }
