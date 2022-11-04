@@ -153,13 +153,84 @@ public class LinkedList {
     //remove at:
     static void removeAt(int index){
         Node temp = head;
-        int count = 0;
-        while (temp != null && count != index){
-            temp = temp.next;
-            count++;
+        if (index < 0 || index > getSize()){
+            System.out.println("invalid arguments");
         }
-        temp.next = temp.next.next;
+        else if(index == 0){
+            removeFirst();
+        }
+        else if (index == getSize() - 1){
+            removeLast();
+        }
+        else {
+            int count = 0;
+            while (temp != null && count != index - 1){
+                temp = temp.next;
+                count++;
+            }
+            temp.next = temp.next.next;
+        }
     }
+
+
+
+    //reverse linked list:
+    private static Node getNodeAt(int index){
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;        //returns node only, not node data
+    }
+    public static void reverseNode(){
+        int leftIndex = 0;
+        int rightIndex = getSize() - 1;
+        while (leftIndex < rightIndex){
+            Node left = getNodeAt(leftIndex);
+            Node right = getNodeAt(rightIndex);
+            leftIndex++;
+            rightIndex--;
+
+            //now swap both datas
+            int temp = left.data;
+            left.data = right.data;
+            right.data = temp;
+        }
+    }
+
+
+
+    //get tail
+    static Node getTail(){
+        Node temp = head;
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+
+
+
+    //reverse pointer iterative
+//    public static void reversePI(){
+//        Node prev = null;
+//        Node current = head;
+//        while (current != null){
+//            Node originalCurrentNext = current.next;
+//
+//            current.next = prev;
+//
+//            prev = current;
+//            current = originalCurrentNext;
+//        }
+//
+//        //finally swap head and tail
+//        Node tail = getTail();
+//        Node temp = head;
+//        head = tail;
+//        tail = temp;
+//    }
 
     public static void main(String[] args) {
         createList(2);
@@ -172,12 +243,9 @@ public class LinkedList {
           addFirst(90);
           addAt(100, 2);
           addLast(11);
-          removeLast();
-          removeFirst();
-          removeAt(0);
+         removeAt(2);
+          System.out.println();
           display();
-          int size = getSize();
-        System.out.println(size);
     }
 }
 
