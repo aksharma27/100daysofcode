@@ -129,6 +129,38 @@ public class LinkedList {
         temp.next = lastNew;
     }
 
+
+
+    //remove last:
+    static void removeLast(){
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
+
+
+    //remove first:
+    static void removeFirst(){
+        Node temp = head;
+        head = temp.next;
+    }
+
+
+
+    //remove at:
+    static void removeAt(int index){
+        Node temp = head;
+        int count = 0;
+        while (temp != null && count != index){
+            temp = temp.next;
+            count++;
+        }
+        temp.next = temp.next.next;
+    }
+
     public static void main(String[] args) {
         createList(2);
         createList(3);
@@ -140,6 +172,9 @@ public class LinkedList {
           addFirst(90);
           addAt(100, 2);
           addLast(11);
+          removeLast();
+          removeFirst();
+          removeAt(0);
           display();
           int size = getSize();
         System.out.println(size);
