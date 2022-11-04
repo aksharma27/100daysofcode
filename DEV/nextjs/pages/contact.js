@@ -5,6 +5,7 @@ const contact = () => {
   return (
     <div>
       <h1 className={styles.heading1}>Hello to contact page</h1>
+      <h2 style={{color: "#fff", textAlign:"center"}}>Hello inline</h2>
     </div>
   )
 }
