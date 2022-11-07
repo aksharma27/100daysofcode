@@ -7,16 +7,17 @@ export const getStaticProps = async () =>{
     //object ko return karwana hi hoga
     return {
         props: {
-            //pas the data object created by res.json
+            //pass the data object created by res.json
             data,
         },
     };
-}
+};  
 
 const blogs = ({data}) =>{
     return (
         <>
         <navbar/>
+        
         {data.map((curElement) => {
             return <div key={curElement.id}> 
             <h2>{curElement.id}</h2>
