@@ -1,11 +1,30 @@
-// import React from 'react'
+import navbar from "../navbar/navbar";
 
-const blogs = () => {
-  return (
-    <div>
-      <h4>this is blogs blog</h4>
-    </div>
-  )
+export const getStaticProps = async () =>{
+    const res = await fetch("https://jsonplaceholder.typecode.com/posts");
+    const data = await res.json();  // convert the data to json so that it's in an object to readable format
+
+    //object ko return karwana hi hoga
+    return {
+        props: {
+            //pas the data object created by res.json
+            data,
+        },
+    };
 }
 
-export default blogs
+const blogs = ({data}) =>{
+    return (
+        <>
+        <navbar/>
+        {data.map((curElement) => {
+            return <div key={curElement.id}> 
+            <h2>{curElement.id}</h2>
+            <h3>{curElement.title}</h3>
+            </div>
+        })}
+        </>
+    );
+}
+
+export default blogs;

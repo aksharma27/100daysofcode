@@ -20,7 +20,7 @@ public class GetNodeFromBack {
     static int getFromEnd(int index){
         Node slow = head;
         Node fast = head;
-        for (int i = 0; i < index; i++){
+        for (int i = 0; i < index; i++){        //to keep a gap to index between slow and fast
             fast = fast.next;
         }
 
