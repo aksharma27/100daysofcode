@@ -8,4 +8,5 @@ for (var i = 0; i < noButtons; i++) {
             + " and her hobbies are: " + housekeeper1.hobbies + "Hi " + housekeeper2.name + " is " + housekeeper2.age + " years old"
             + " and her hobbies are: " + housekeeper2.hobbies);    
     })
+    
 }
