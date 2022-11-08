@@ -44,9 +44,8 @@ public class StackList {
             head = newNode;
         }
         else {
-            Node temp = head;
+            newNode.next = head;
             head = newNode;
-            newNode.next = temp;
         }
         System.out.println(data + " pushed to stack");
     }
