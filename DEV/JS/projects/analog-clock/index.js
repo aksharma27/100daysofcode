@@ -15,20 +15,32 @@
 // m mins = 6 m mins
 
 
-//second hadn:  --------------------------------
+//second hand:  --------------------------------
 // 60 sec = 360 deg 
 // 1 sec = 6 deg 
 // s sec = 6 s deg
 
-setInterval(() => {
-    date = new Date();
-    htime = d.getHours();
-    mtime = d.getMinutes();
-    stime = d.getSeconds();
+const  secondHand = document.querySelector('.second-hand');
+const minuteHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
 
-    hrot = 30 * htime + mtime / 2;
-    mrot = 6 * mtime;
-    srot = 6 * stime;
+function setDate(){ 
+    const date = new Date();
 
-    hour.style.transform = `rotate()`
-}, 1000)
+const seconds = date.getSeconds();
+const secondsDegrees = ((seconds / 60) * 360) + 90;
+secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+const mins = date.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+  minuteHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+
+  const hour = date.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+
+setInterval(setDate, 1000);
+
+setDate();
