@@ -6,7 +6,15 @@ body {
     text-align: center;
 }
 
+input:checked+p {
+    text-decoration: line-through;
+    text-decoration-color: purple;
+}
 
+input,
+p {
+    display: inline;
+}
 
 li {
     /* text-align: left; */

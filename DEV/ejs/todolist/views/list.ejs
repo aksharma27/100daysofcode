@@ -22,17 +22,19 @@
                     <%= kindOfDay %>
                 </h1>
 
-                <ul>
+                <div class="list">
 
                     <% for(var i=0; i< newListItems.length; i++){ %>
-                        <li>
+                        <input type="checkbox">
+                        <p>
                             <%= newListItems[i] %>
-                        </li>
+                        </p>
+
                         <% } %>
-                </ul>
+                </div>
 
                 <form action="/" method="post">
-                    <input type="text" name="newItem" placeholder="to-do?">
+                    <input type="text" name="newItem" placeholder="to-do?" autocomplete="off">
                     <button type="submit">ADD</button>
                 </form>
 
