@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -22,9 +23,7 @@
                 </h1>
 
                 <ul>
-                    <li>Buy food</li>
-                    <li>Cood food</li>
-                    <li>eat food</li>
+
                     <% for(var i=0; i< newListItems.length; i++){ %>
                         <li>
                             <%= newListItems[i] %>
@@ -33,7 +32,7 @@
                 </ul>
 
                 <form action="/" method="post">
-                    <input type="text" name="newItem" placeholder="to-do?" value="to-do?">
+                    <input type="text" name="newItem" placeholder="to-do?">
                     <button type="submit">ADD</button>
                 </form>
 

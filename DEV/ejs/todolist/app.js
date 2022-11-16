@@ -1,31 +1,37 @@
-var express = require("express");
+const express = require("express");
 const bodyParser = require("body-parser");
 let ejs = require('ejs')
 
 const app = express();
 app.set("view engine", "ejs");
 
-
+let items = ["code-development", "dsa"];
 app.use(bodyParser.urlencoded({ extended:true}));
+
+app.use(express.static("public"));                 //serve static files like css and js
 
 app.get("/", (req, res)=>{
    
-    var today = new Date();
-    var options = {
+    let today = new Date();
+    let options = {
         day: "numeric",
         month: "long",
         weekday: "long",
         
     };
-    var day = today.toLocaleDateString("en-US", options);
+    let day = today.toLocaleDateString("en-US", options);
 
     res.render("list", {kindOfDay: day, newListItems: items});
      
 });
 
 app.post("/", (req, res)=>{
-    var item = req.body.newItem;
-    console.log(item);
+    let item = req.body.newItem;
+
+    items.push(item);
+
+    res.redirect("/");
+    // console.log(item);
 }) 
 
 
