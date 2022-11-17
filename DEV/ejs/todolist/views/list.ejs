@@ -1,45 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("header") -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-    <h1>
+    <% if(listTitle==="Saturday" || listTitle==="Sunday" ){ %>
+        <h1 style="color: green;">
+            <%= listTitle %> List
+        </h1>
+        <% } %>
 
-        <% if(listTitle==="Saturday" || listTitle==="Sunday" ){ %>
-            <h1 style="color: green;">
-                <%= listTitle %> List
+            <h1 style="color: red;">
+                <%= listTitle %>
             </h1>
-            <% } %>
 
-                <h1 style="color: red;">
-                    <%= listTitle %>
-                </h1>
+            <div class="list">
 
-                <div class="list">
+                <% for(var i=0; i< newListItems.length; i++){ %>
+                    <input type="checkbox">
+                    <p>
+                        <%= newListItems[i] %>
+                    </p>
 
-                    <% for(var i=0; i< newListItems.length; i++){ %>
-                        <input type="checkbox">
-                        <p>
-                            <%= newListItems[i] %>
-                        </p>
+                    <% } %>
+            </div>
 
-                        <% } %>
-                </div>
-
-                <form action="/" method="post">
-                    <input type="text" name="list" value=<%=listTitle%> placeholder="to-do?" autocomplete="off">
-                    <button type="submit">ADD</button>
-                </form>
-
-
-    </h1>
-</body>
-
-</html>
+            <form action="/" method="post">
+                <input type="text" name="list" value=<%=listTitle%> placeholder="to-do?" autocomplete="off">
+                <button type="submit">ADD</button>
+            </form>
+            <%- include("footer") -%>

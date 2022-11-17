@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 let ejs = require('ejs')
+const date = require(__dirname + "/date.js");
+
+console.log(date);
 
 
 const app = express();
@@ -14,15 +17,8 @@ app.use(express.static("public"));                 //serve static files like css
 
 app.get("/", (req, res)=>{
    
-    let today = new Date();
-    let options = {
-        day: "numeric",
-        month: "long",
-        weekday: "long",
-        
-    };
-    let day = today.toLocaleDateString("en-US", options);
-
+    let day = date.getDay();
+   
     res.render("list", {listTitle: day, newListItems: items});
      
 });
@@ -32,7 +28,7 @@ app.post("/", (req, res)=>{
     console.log(req.body);
     if(req.body.list === "Work"){
         workItems.push(item);
-        res.redirect("/work");
+        res.redirect("/work");  
     }
    
     else{
