@@ -1,6 +1,6 @@
 // console.log(module);
 // module.exports = "hello world";
-module.exports.getDate = () =>{
+exports.getDate = () =>{
 
     let today = new Date();
     let options = {
@@ -17,7 +17,7 @@ return today.toLocaleDateString("en-US", options);
 // return day;
 
 
-module.exports.getDay = () => {
+exports.getDay = () => {
     let today = new Date();
 
     let options = {
