@@ -1,8 +1,6 @@
 // console.log(module);
 // module.exports = "hello world";
-module.exports.getDate = getDate;
-
-function getDate() {
+module.exports.getDate = () =>{
 
     let today = new Date();
     let options = {
@@ -11,22 +9,21 @@ function getDate() {
     weekday: "long",
     
 };
-let day = today.toLocaleDateString("en-US", options);
-return day;
+return today.toLocaleDateString("en-US", options);
+
 }
 
 // let day = today.toLocaleDateString("en-US", options);
 // return day;
 
 
-module.exports.getDay = getDay;
-function getDay(){
+module.exports.getDay = () => {
     let today = new Date();
 
     let options = {
         weekday : "long"
     };
-    let day = today.toLocaleDateString("en-US", options);
-    return day;
+    return today.toLocaleDateString("en-US", options);
+    // return day;
 }
 
