@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Add, Sub, Div, Mul} from "./calculator";
+// OR  
+// import * as Calculator from "./calculator";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    {Add(1,2)}
+    {Sub(4,3)}
   </React.StrictMode>
 );
 
