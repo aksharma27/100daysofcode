@@ -7,7 +7,7 @@ import {Add, Sub, Div, Mul} from "./calculator";
 import store from "./store";
 
 //subsribe() is a change listner
-store.subsribe(() => console.log(store.getState()));
+store.subscribe(() => console.log(store.getState()));
 // OR  
 // import * as Calculator from "./calculator";
 

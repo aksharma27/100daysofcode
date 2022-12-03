@@ -9,7 +9,7 @@ const Redux = () => {
 
                 <div className="quantity">
                     <a href="" title='decrement' className="quantity_minus"><span>-</span></a>
-                    <input type="text" name="quantity" className='quantity_input' value="0" />
+                    <input type="text" name="quantity" className='quantity_input' />
                     <a href="" title='increment' className="quantity_plus"><span>+</span></a>
                 </div>
             </div>
