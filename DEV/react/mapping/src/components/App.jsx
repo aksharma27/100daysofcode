@@ -19,7 +19,7 @@ const App = () => {
         <div>
             <h1>Emojipedia</h1>
             <dl className="dictionary">
-                {emojipedia.map()}
+                {emojipedia.map(createEntry)};
             </dl>
         </div>
     )
