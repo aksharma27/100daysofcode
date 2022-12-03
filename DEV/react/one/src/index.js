@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Add, Sub, Div, Mul} from "./calculator";
+import store from "./store";
+
+//subsribe() is a change listner
+store.subsribe(() => console.log(store.getState()));
 // OR  
 // import * as Calculator from "./calculator";
 
