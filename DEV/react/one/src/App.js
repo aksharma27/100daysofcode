@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
+import Redux from "./Redux";
 
 function App() {
   
@@ -27,6 +28,8 @@ function App() {
     <h1 style={constStyle}>
       {greeting}
     </h1>
+
+    <Redux/>
    </>
   );
 }
