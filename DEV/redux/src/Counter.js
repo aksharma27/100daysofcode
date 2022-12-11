@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { CountContext } from './App';
 
 const Counter = (props) => {
-    const count =  ; 
+    const countState =  useContext(CountContext);  
+    console.log("Count is : ", countState)
   return (
     <div>
-      Count is : {count};
+      Count is : {countState.countState.count};
     </div>
   )
 }
