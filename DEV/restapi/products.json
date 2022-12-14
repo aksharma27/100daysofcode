@@ -1,0 +1,26 @@
+[
+    {
+        "name": "iphone",
+        "price": 153,
+        "featured": true,
+        "company": "apple"
+    },
+    {
+        "name": "samsung",
+        "price": 200,
+        "featured": false,
+        "company": "samsung"
+    },
+    {
+        "name": "redmi",
+        "price": 13,
+        "featured": true,
+        "company": "xiomi"
+    },
+    {
+        "name": "noise",
+        "price": 53,
+        "featured": true,
+        "company": "noise"
+    }
+]
