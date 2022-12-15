@@ -3,12 +3,16 @@ const Product = require("../models/product");
 
 const getAllProducts = async (req, res) => {
 
-    const {company} = req.query;
+    const {company, name} = req.query;
     const queryObject = {};
 
     if(company){
         queryObject.company = company;
     }
+    if(name){
+        queryObject.name = name;
+    }
+    console.group(queryObject);
 
 
     const myData = await Product.find(queryObject  );
