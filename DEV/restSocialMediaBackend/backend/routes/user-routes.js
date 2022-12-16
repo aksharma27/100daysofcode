@@ -4,4 +4,7 @@ const router = express.Router();
 
 router.get('/',getAllUser);
 
+//signup routes for users
+router.post('/signup', );
+
 module.exports = router;
