@@ -10,7 +10,8 @@ const getAllProducts = async (req, res) => {
         queryObject.company = company;
     }
     if(name){
-        queryObject.name = name;
+        //mongodb regex for wrong but similar names passed. eg: ifone, iphon, ihone, etc;
+        queryObject.name = {$regex: name, $options: "i"};
     }
     console.group(queryObject);
 
