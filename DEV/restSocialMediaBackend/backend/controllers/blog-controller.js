@@ -1,0 +1,16 @@
+const Blog = require('../models/Blog');
+
+
+const getAllBlogs = async (req, res, next)=>{
+    let blogs;
+    try{
+        blogs = await Blog.find();
+    }catch(e){
+        console.log(e);
+    }
+
+    if(!blogs){ //if blog is empgy
+        return res.status(404).json({message: "No blog found"});
+    }
+    return res.status(200).json({blogs});
+}

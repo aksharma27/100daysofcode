@@ -1,13 +1,15 @@
-const express = require("express"); // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
-const mongoose = require("mongoose"); // see https://github.com
+const express = require("express"); 
 require('dotenv').config({ path: 'config.env' });
+const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-const router = require('./routes/user-routes');
+const route = require('./routes/user-routes');
 const db = process.env.DB;
 
 const app = express();
 
-app.use('/api/users', router);
+
+app.use(express.json());
+app.use('/api/users', route);
 
 mongoose.connect(process.env.DB, {useUnifiedTopology:true,
     useNewUrlParser: true}).then(()=>{
