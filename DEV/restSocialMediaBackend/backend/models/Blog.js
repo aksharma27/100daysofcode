@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
     title : {
-        type: string,
+        type: String,
         requires: true
     },
     description: {
