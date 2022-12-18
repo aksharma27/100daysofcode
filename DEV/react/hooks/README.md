@@ -9,3 +9,7 @@ const [count, setCount] = useState(0);
 }
 
 3) hooks cannot be conditional
+# Types of hooks in react : 
+1- useState
+
+
